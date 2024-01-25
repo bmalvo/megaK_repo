@@ -3,6 +3,7 @@
     --color-secondary: rgb(39, 40, 46);
     --color-white: rgb(255, 255, 255);
     --color-blue: rgb(0, 119, 255);
+    --color-black: rgb(11, 11, 11);
 }
 
 body {
@@ -24,10 +25,33 @@ body {
     align-items: center;
 }
 
-.container__content {
+.content {
     padding-top: 78px;
-    text-align: center;
     padding-left: 18px;
+    padding-right: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-evenly;
+}
+
+.content__item {
+    flex-basis: 350px;
+    height: 220px;
+    background-color: var(--color-black);
+    border-radius: 5px;
+}
+
+.content__image {
+    height: 200px;
+    width: 100%;
+    background-image: url(./img/ocean.jpg);
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.content__describtion {
+    text-align: center;
 }
 
 .content__header--avatar {
@@ -110,7 +134,7 @@ a {
         display: none;
     }
 
-    .container__content {
+    .content {
         margin-left: 250px;
     }
 }
