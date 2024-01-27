@@ -1,0 +1,9 @@
+Istnieje moduł dns, który służy m.in. do operacji związanych z serwerami nazw.
+Istnieje w nim funkcja dns.lookup(host), która jest asynchroniczna.
+
+Spróbuj sprawdzić dzięki temu jaki jest adres IP hosta google.com.
+
+- Wykonaj zadanie na callbackach.
+- Nastepnie wykorzystaj util.promisify().
+- Na końcu spróbuj wykorzystać specjalną wersję dostępną w dns.promises i 
+  async/await.
