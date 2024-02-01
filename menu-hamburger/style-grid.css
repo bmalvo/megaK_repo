@@ -34,15 +34,14 @@ body {
     padding-top: 78px;
     padding-left: 18px;
     padding-right: 18px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 18px;
     justify-content: space-evenly;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
 }
 
 .content__item {
-    flex-basis: 350px;
-    height: 220px;
     background-color: var(--color-black);
     border-radius: 5px;
 }
@@ -141,5 +140,17 @@ a {
 
     .content {
         margin-left: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content {
+        grid-template-columns: repeat(2, minmax(230px, 350px));
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content {
+        grid-template-columns: repeat(3, minmax(230px, 350px));
     }
 }
