@@ -1,0 +1,27 @@
+1. Przetwarzanie danych
+
+Zapisz do pliku w swoim programie o ścieżce ./data/input1.json taką treść:
+[1, 2, 7, 20, 56, 22]
+
+Napisz program, w którym otworzysz ten plik.
+Jest to tablica licb w formacie json.
+Następnie zsumuj wsszystkie liczby, a wynik zapisz tekstem do pliku ./data/sum.txt
+
+Pamiętaj, że funkcje odczytu i zapisu są asynchronicne. Twój kod powinnien odpowiadać takiemu pseudokodowi:
+
+ODCZYT PLIKU
+  KIEDY SKOŃCZY:
+  ZMIANA JSONA NA TABLICĘ
+  WYKONANIE SUMY
+  ZAPIS PLIKU
+    KIEDY SKOŃCZY:
+    INFORMACJA O POWODZENIU LUB BŁĘDZIE
+
+2. Zawartość wszystkich plików w katalogu.
+
+Napisz program, który wyświetli zawartość wszystkich plików w folderze PROJEKTY.
+
+Skorzystaj z możliwości listowania plików w folderze. Po otrzymaniu listy plików wyświetl je w pętli.
+
+Następnie spróbuj wykorzystać stat -> konkretny wpis na metodę .isDirectory(), aby wchodzić rekursywnie do kolejnych katalogów
+i zlistować również wszystko w środku.
