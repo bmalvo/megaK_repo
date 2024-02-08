@@ -1,0 +1,15 @@
+1. Informacje
+Stwórz program- przyjmując parametr- który na podstawie parametru wyświetli wszelkie informacje:
+- pełna ścieżka
+-katalog nadrzędny
+-nazwa pliku
+- rozszerzenie
+
+2. Bezpieczna ścieżka
+Przyjmuj w argumencie do kolejnego programu nazwę pliku. Zadbaj o to, aby musiał to być
+plik znajdujący się w katalogu programu, nie poza nim. Sprawdź czy twój program jest 
+odporny na nastepujące sztuczki:
+-../../../../../../../../Windows/System32/Drivers/etc/hosts
+- ~/Me.jpg
+- C:\systeminfo
+- LPT1 (co się dzieje w tym wypadku?)
