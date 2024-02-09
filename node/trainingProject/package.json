@@ -1,0 +1,19 @@
+{
+  "name": "trainingproject",
+  "version": "1.0.0",
+  "description": "for_learning_purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "b_malvo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/commander": "^2.12.2",
+    "@types/lodash": "^4.14.202",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "lodash": "4.17.15"
+  }
+}
