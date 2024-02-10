@@ -1,4 +1,6 @@
-const { basename, extname, join, resolve, normalize } = require('path');
+const {
+  basename, extname, join, resolve, normalize,
+} = require('path');
 
 const userPath = process.argv[2];
 const fullPath = join(__dirname, userPath);
@@ -7,7 +9,7 @@ console.log(`full path -> ${fullPath}`);
 console.log(`directory -> ${__dirname}`);
 console.log(`file name -> ${basename(userPath)}`);
 console.log(`file extension -> ${extname(userPath)}`);
-console.log('---')
+console.log('---');
 
 function safeJoin(base, target) {
   const targetPath = `.${normalize(`/${target}`)}`;
