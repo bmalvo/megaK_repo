@@ -1,12 +1,21 @@
-const { exec } = require('child_process');
-// const { stdout } = require('process');
+const { stdout } = require('process');
+const { promisify } = require('util');
 
-exec('node test.js', (err, stdout, stderr) => {
-  if (err) {
-    console.log('Error ocured: ', err);
-  } else if (stderr) {
-    console.log('Error in app!', stderr);
-  } else {
-    console.log('program has finished!', stdout);
+const exec = promisify(require('child_process').exec);
+
+// exec('dir')
+//   .then(({ stdout, stderr }) => {
+//     console.log(stderr);
+//     console.log('---');
+//     console.log(stdout);
+//   });
+
+(async () => {
+  try {
+    const ip = process.argv[2].replace(/[^0-9.]+/g, '');
+    const data = await exec(`ping ${ip}`);
+    console.log(data.stdout);
+  } catch (er) {
+    console.error('error ocured: ', er);
   }
-});
+})();
