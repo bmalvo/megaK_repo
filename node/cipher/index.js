@@ -1,22 +1,13 @@
-const { promisify } = require('util');
+const { encryptText, decryptText } = require('./cipher');
 
-const scrypt = promisify;
-const randomBytes = promisify(require('crypto').randomBytes);
-const { createCipheriv } = require('crypto');
-
-const algorithm = 'aes-192-cbc';
-const password = 'Password used to generate key';
+const SALT = 'abcABC123!@#';
 
 (async () => {
-  const key = await scrypt(password, 'salt', 24);
-  const iv = await randomBytes(16);
+  const encrypted = await encryptText('Zażółć gęślą jaźń', 'haslo', SALT);
 
-  const cipher = createCipheriv(algorithm, key, iv);
-  let encrypted = cipher.update('some clear texxt data', 'utf8', 'hex');
-  encrypted += cipher.final('hex');
+  console.log(encrypted);
 
-  console.log({
-    encrypted,
-    iv: iv.toString('hex'),
-  });
+  const decrypted = await decryptText(encrypted.encrypted, 'haslo', SALT, encrypted.iv);
+
+  console.log(decrypted);
 })();
