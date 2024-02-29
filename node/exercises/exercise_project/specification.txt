@@ -1,0 +1,8 @@
+Dwa programy narzędziowe.
+
+1. Program encrypt.js, przyjmuje on w lini komend informację o nazwie pliku (zakładamy, że tekstowego) i haśle. Np:
+node encrypt.js/home/test.txt mojahaslo
+
+Nadpisuje on plik tekstowy, który wskazaliśmy. Zapisuje do niego zaszyfrowane (nie zahashowane) dane. Użyj soli.
+
+Pamiętaj, żeby zapisać to jako JSON, bo opróc zakodowanych danych potrzebujesz przechować iv.
