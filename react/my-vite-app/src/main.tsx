@@ -22,14 +22,13 @@ const objArr = [
 ]
 
 const text = 'Lorem ipsum';
-
 const lorem = text.split('')
 
 const ifEven = (text: string, num: number) => {
   if (num % 2 === 0) {
     return text.toUpperCase()
   } else {
-    return text.toLocaleLowerCase()
+    return text.toLowerCase()
   }
 };
 
