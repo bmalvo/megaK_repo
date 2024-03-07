@@ -1,10 +1,12 @@
 const { createReadStream, createWriteStream } = require('fs');
 const { pipeline } = require('stream').promises;
+const { createGunzip } = require('zlib');
 
 (async () => {
   await pipeline(
-    createReadStream('michal1.jpg'),
-    createWriteStream('michal2.jpg'),
+    createReadStream('json2.json'),
+    createGunzip(),
+    createWriteStream('json3.json'),
   );
-  console.log('Done! ');
+  console.log('Done! '); // eslint-disable-line no-console
 })();
