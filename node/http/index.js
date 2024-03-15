@@ -1,4 +1,5 @@
 const { createServer } = require('http');
+const { readFile } = require('fs').promises;
 
 // createServer((req, res) => {
 //   console.log(req, res);
@@ -10,17 +11,11 @@ const { createServer } = require('http');
 
 const server = createServer();
 
-server.on('request', (req, res) => {
-  if (req.url === '/' && req.method === 'GET ') {
-    res.writeHead(200, {
-      'Content-type': 'text/html',
-    });
-    res.end('<h1>Hello from MegaK</h1>');
-  } else {
-    res.writeHead(404, {
-      'Content-tpe': 'text/html',
-    });
-    res.end('<h1>Not Found</h1>');
-  }
+server.on('request', async (req, res) => {
+  const html = await readFile('./index.html', 'utf8');
+  res.writeHead(200, {
+    'Content-type': 'text/html',
+  });
+  res.end(html);
 });
 server.listen(3000, 'localhost');
